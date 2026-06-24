@@ -21,6 +21,17 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  // Auto-close the mobile menu when resizing up to desktop, otherwise the
+  // (now hidden) menu would keep the body scroll locked on desktop.
+  useEffect(() => {
+    const mq = window.matchMedia("(min-width: 1024px)");
+    const onChange = () => {
+      if (mq.matches) setOpen(false);
+    };
+    mq.addEventListener("change", onChange);
+    return () => mq.removeEventListener("change", onChange);
+  }, []);
+
   // Lock body scroll while the full-screen mobile menu is open
   useEffect(() => {
     if (!open) return;
