@@ -109,10 +109,14 @@
 
 html {
   scroll-behavior: smooth;
-  /* Prevent mobile browsers from auto-inflating text + avoid horizontal scroll */
+  /* Prevent mobile browsers from auto-inflating text */
   -webkit-text-size-adjust: 100%;
   text-size-adjust: 100%;
+  /* Prevent horizontal scroll WITHOUT creating a scroll container that would
+     break normal (mouse-wheel) vertical scrolling. `clip` wins where
+     supported; `hidden` is the fallback for very old browsers. */
   overflow-x: hidden;
+  overflow-x: clip;
 }
 
 body {
@@ -122,11 +126,8 @@ body {
   -webkit-font-smoothing: antialiased;
   width: 100%;
   max-width: 100%;
-  overflow-x: hidden;
   /* Remove the grey tap flash on iOS/Android for a premium feel */
   -webkit-tap-highlight-color: transparent;
-  /* Avoid the rubber-band scroll chaining into parent surfaces */
-  overscroll-behavior-y: none;
 }
 
 /* Inputs at 16px on mobile so iOS Safari never zooms the viewport on focus */
