@@ -138,14 +138,15 @@ export default function SiteBackground() {
       {/* Base gradient */}
       <div className="absolute inset-0 bg-[var(--background)]" />
 
-      {/* Aurora blobs */}
-      <div className="absolute -top-40 -left-40 h-[55vh] w-[55vh] rounded-full bg-burgundy/30 blur-[120px] animate-aurora" />
+      {/* Aurora blobs — animating huge blur radii is the heaviest paint on
+          mobile, so we shrink the blur and freeze the animation on phones. */}
+      <div className="absolute -top-40 -left-40 h-[55vh] w-[55vh] rounded-full bg-burgundy/30 blur-[70px] animate-none sm:blur-[120px] sm:animate-aurora" />
       <div
-        className="absolute top-1/3 -right-40 h-[60vh] w-[60vh] rounded-full bg-burgundy-light/25 blur-[140px] animate-aurora"
+        className="absolute top-1/3 -right-40 h-[60vh] w-[60vh] rounded-full bg-burgundy-light/25 blur-[70px] animate-none sm:blur-[140px] sm:animate-aurora"
         style={{ animationDelay: "-6s" }}
       />
       <div
-        className="absolute bottom-0 left-1/3 h-[45vh] w-[45vh] rounded-full bg-burgundy-dark/30 blur-[120px] animate-aurora"
+        className="absolute bottom-0 left-1/3 hidden h-[45vh] w-[45vh] rounded-full bg-burgundy-dark/30 blur-[70px] animate-none sm:block sm:blur-[120px] sm:animate-aurora"
         style={{ animationDelay: "-12s" }}
       />
 

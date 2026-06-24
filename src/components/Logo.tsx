@@ -7,7 +7,7 @@ type LogoProps = {
 };
 
 const LOGO_W = 420;
-const LOGO_H = 390;
+const LOGO_H = 389;
 
 export default function Logo({ className = "h-10", priority = false }: LogoProps) {
   return (

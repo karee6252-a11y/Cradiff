@@ -11,8 +11,7 @@
   --color-ink: #0a0a0a;
   --color-ink-soft: #121113;
 
-  --font-heading: var(--font-poppins), var(--font-montserrat), ui-sans-serif,
-    system-ui, sans-serif;
+  --font-heading: var(--font-poppins), ui-sans-serif, system-ui, sans-serif;
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
 
   --shadow-glow: 0 0 0 1px rgba(139, 26, 26, 0.25),
@@ -184,6 +183,19 @@ h5 {
   backdrop-filter: blur(26px) saturate(160%);
   -webkit-backdrop-filter: blur(26px) saturate(160%);
   border: 1px solid var(--border);
+}
+
+/* backdrop-filter is very expensive on mobile GPUs — use a lighter blur on
+   small screens to keep scrolling smooth without losing the glass look. */
+@media (max-width: 767px) {
+  .glass {
+    backdrop-filter: blur(8px) saturate(120%);
+    -webkit-backdrop-filter: blur(8px) saturate(120%);
+  }
+  .glass-strong {
+    backdrop-filter: blur(12px) saturate(130%);
+    -webkit-backdrop-filter: blur(12px) saturate(130%);
+  }
 }
 
 @utility text-gradient {

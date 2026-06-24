@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Inter, Poppins, Montserrat } from "next/font/google";
+import { Inter, Poppins } from "next/font/google";
 import "./globals.css";
 import { SITE } from "@/lib/site";
 import { ThemeProvider, NO_FLASH_SCRIPT } from "@/components/ThemeProvider";
@@ -16,13 +16,6 @@ const inter = Inter({
 
 const poppins = Poppins({
   variable: "--font-poppins",
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800"],
-  display: "swap",
-});
-
-const montserrat = Montserrat({
-  variable: "--font-montserrat",
   subsets: ["latin"],
   weight: ["500", "600", "700", "800"],
   display: "swap",
@@ -83,7 +76,7 @@ export default function RootLayout({
         <script dangerouslySetInnerHTML={{ __html: NO_FLASH_SCRIPT }} />
       </head>
       <body
-        className={`${inter.variable} ${poppins.variable} ${montserrat.variable} min-h-screen font-sans antialiased`}
+        className={`${inter.variable} ${poppins.variable} min-h-screen font-sans antialiased`}
       >
         <ThemeProvider>
           <SiteBackground />
