@@ -55,7 +55,7 @@ export default function Navbar() {
             whileHover={{ scale: 1.04 }}
             className="flex items-center"
           >
-            <Logo />
+            <Logo className="h-10 sm:h-11" priority />
           </motion.span>
         </Link>
 

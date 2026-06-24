@@ -9,7 +9,7 @@ export default function Footer() {
       <div className="divider-glow" />
       <div className="mx-auto grid max-w-7xl gap-10 px-5 py-12 sm:gap-12 sm:px-8 sm:py-16 md:grid-cols-[1.4fr_1fr_1fr]">
         <div className="flex flex-col gap-5">
-          <Logo />
+          <Logo className="h-14" />
           <p className="max-w-sm text-sm leading-relaxed text-[var(--muted)]">
             {SITE.description}
           </p>

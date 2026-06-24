@@ -31,7 +31,7 @@ export default function Hero() {
             className="glass-strong relative flex h-24 w-24 items-center justify-center rounded-3xl shadow-glow sm:h-28 sm:w-28"
           >
             <div className="absolute inset-0 animate-glow-pulse rounded-3xl bg-burgundy/30 blur-2xl" />
-            <Logo showText={false} className="relative scale-[2]" />
+            <Logo className="relative h-14 sm:h-16" priority />
           </motion.div>
         </motion.div>
 
